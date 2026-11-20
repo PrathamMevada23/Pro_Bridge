@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "pro-bridge": {
+      "command": "node",
+      "args": ["/absolute/path/to/Pro_Bridge/apps/mcp-server/dist/index.js"],
+      "env": {
+        "PRO_BRIDGE_API_URL": "http://127.0.0.1:4317",
+        "PRO_BRIDGE_LOCAL_TOKEN": "replace-with-your-local-token"
+      }
+    }
+  }
+}

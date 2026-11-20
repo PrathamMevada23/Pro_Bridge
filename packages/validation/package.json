@@ -1,0 +1,37 @@
+{
+  "name": "@pro-bridge/validation",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Zod schemas for Pro_Bridge API and domain contracts.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean --sourcemap --target node22 --external @pro-bridge/shared-types",
+    "dev": "tsup src/index.ts --format esm --dts --sourcemap --target node22 --external @pro-bridge/shared-types --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "clean": "rm -rf dist coverage"
+  },
+  "dependencies": {
+    "@pro-bridge/shared-types": "workspace:*",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "@vitest/coverage-v8": "5.1.0",
+    "tsup": "9.0.0",
+    "typescript": "5.9.3",
+    "vitest": "5.1.0"
+  }
+}

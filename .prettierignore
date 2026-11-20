@@ -1,0 +1,10 @@
+node_modules/
+dist/
+coverage/
+.output/
+.wxt/
+pnpm-lock.yaml
+*.tsbuildinfo
+apps/core/drizzle/
+apps/extension/.output/
+apps/extension/.wxt/

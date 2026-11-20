@@ -1,0 +1,33 @@
+{
+  "name": "@pro-bridge/extension",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ChatGPT browser extension for manual Pro_Bridge synchronization.",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "build": "wxt build",
+    "zip": "wxt zip",
+    "typecheck": "wxt prepare && tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "clean": "rm -rf .output .wxt coverage"
+  },
+  "dependencies": {
+    "@pro-bridge/conversation-parser": "workspace:*",
+    "@pro-bridge/shared-types": "workspace:*",
+    "@pro-bridge/validation": "workspace:*",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitest/coverage-v8": "5.1.0",
+    "@wxt-dev/module-react": "1.2.2",
+    "typescript": "5.9.3",
+    "vitest": "5.1.0",
+    "wxt": "0.21.5"
+  }
+}

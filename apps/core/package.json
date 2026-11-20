@@ -1,0 +1,47 @@
+{
+  "name": "@pro-bridge/core",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local Pro_Bridge core API.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsup",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:backup": "tsx src/scripts/backup.ts",
+    "clean": "rm -rf dist coverage"
+  },
+  "dependencies": {
+    "@fastify/cors": "11.4.0",
+    "@pro-bridge/context-engine": "workspace:*",
+    "@pro-bridge/shared-types": "workspace:*",
+    "@pro-bridge/validation": "workspace:*",
+    "better-sqlite3": "13.0.3",
+    "dotenv": "18.0.9",
+    "drizzle-orm": "0.45.4",
+    "fastify": "5.12.8",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "9.6.0",
+    "@types/node": "22.20.5",
+    "@vitest/coverage-v8": "5.1.0",
+    "drizzle-kit": "0.31.11",
+    "tsup": "9.0.0",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vitest": "5.1.0"
+  }
+}

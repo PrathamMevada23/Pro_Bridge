@@ -1,0 +1,40 @@
+{
+  "name": "pro-bridge",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local-first bridge between AI chat applications and coding agents.",
+  "type": "module",
+  "packageManager": "pnpm@12.16.1",
+  "engines": {
+    "node": ">=22.18.0",
+    "pnpm": ">=12.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm build && pnpm --filter @pro-bridge/core dev",
+    "build": "pnpm -r build",
+    "start": "pnpm --filter @pro-bridge/core start",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm build && pnpm test:unit",
+    "test:unit": "pnpm -r test",
+    "test:coverage": "pnpm build && pnpm -r test:coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "verify": "pnpm build && pnpm typecheck && pnpm lint && pnpm test:unit",
+    "db:generate": "pnpm --filter @pro-bridge/core db:generate",
+    "db:migrate": "pnpm --filter @pro-bridge/core db:migrate",
+    "db:backup": "pnpm --filter @pro-bridge/core db:backup",
+    "clean": "pnpm -r clean"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.5",
+    "@types/node": "22.20.5",
+    "eslint": "9.39.5",
+    "eslint-config-prettier": "10.1.8",
+    "globals": "17.14.0",
+    "prettier": "3.9.10",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.72.1"
+  }
+}
